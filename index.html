@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MORFODANS™ — by dancer for dancer</title>
-<meta name="description" content="MORFODANS — pakaian yang dirancang dari tubuh penari, untuk tubuh penari. By dancer, for dancer." />
+<title>MORFODANS™ — Indonesia's Pioneer Clothing Brand for Dancers</title>
+<meta name="description" content="MORFODANS — Indonesia's Pioneer Clothing Brand for Dancers. By dancers, for dancers." />
 <link rel="icon" href="logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +29,7 @@
   html{ scroll-behavior:smooth; overflow-x:clip; }
   body{
     background:var(--paper); color:var(--ink);
-    font-family:var(--serif); font-size:17px; line-height:1.55;
+    font-family:var(--serif); font-size:17px; line-height:1.6;
     -webkit-font-smoothing:antialiased; overflow-x:clip;
   }
   a{ color:inherit; text-decoration:none; }
@@ -37,22 +37,20 @@
   .disp{ font-family:var(--display); font-weight:400; letter-spacing:.01em; line-height:.9; text-transform:uppercase; }
   .label{ font-family:var(--serif); font-weight:800; font-size:clamp(12px,1.5vw,14px); letter-spacing:.14em; text-transform:uppercase; color:var(--red); }
 
-  /* hand-drawn marks */
   .mark{ position:absolute; pointer-events:none; overflow:visible; }
   .mark path{ fill:none; stroke:var(--red); stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; }
 
-  /* reveal */
   .reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.in{ opacity:1; transform:none; }
 
-  /* ---------- TICKER ---------- */
+  /* TICKER */
   .ticker{ background:var(--ink); overflow:hidden; white-space:nowrap; }
   .ticker-track{ display:inline-block; padding:8px 0; animation:scroll 32s linear infinite; }
   .ticker-track span{ font-family:var(--serif); font-weight:700; font-size:11px; letter-spacing:.1em; color:var(--paper); padding:0 14px; }
   .ticker-track span b{ color:var(--red); }
   @keyframes scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-  /* ---------- HEADER ---------- */
+  /* HEADER */
   header{ position:sticky; top:0; z-index:70; background:rgba(246,243,236,.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
   .head-in{ display:flex; align-items:center; justify-content:space-between; height:62px; }
   .h-left, .h-right{ flex:1; display:flex; align-items:center; gap:14px; }
@@ -62,16 +60,17 @@
   .brand{ display:flex; align-items:center; gap:9px; }
   .brand img{ width:32px; height:32px; }
   .brand .wm{ font-family:var(--serif); font-weight:800; font-size:18px; letter-spacing:-.01em; text-transform:uppercase; color:var(--ink); line-height:1; }
-  .bag-count{ position:absolute; top:-6px; right:-8px; background:var(--red); color:#fff; font-family:var(--serif); font-weight:700; font-size:10px; min-width:17px; height:17px; border-radius:50%; display:flex; align-items:center; justify-content:center; padding:0 4px; }
-  .bag-wrap{ position:relative; }
+  .ea-pill{ font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.05em; text-transform:uppercase; background:var(--red); color:#fff; padding:9px 16px; white-space:nowrap; transition:background .15s; }
+  .ea-pill:hover{ background:var(--red-deep); }
 
-  /* ---------- HERO ---------- */
+  /* HERO */
   .hero{ padding:clamp(52px,9vw,120px) 0 clamp(44px,7vw,96px); position:relative; }
   .hero-grid{ display:grid; grid-template-columns:1fr; gap:30px; align-items:center; }
   .hero-eyebrow{ font-family:var(--hand); font-size:clamp(18px,3.5vw,28px); color:var(--red); margin-bottom:14px; }
   .hero h1{ font-family:var(--display); font-size:clamp(50px,12vw,170px); line-height:.84; letter-spacing:.005em; text-transform:uppercase; position:relative; display:inline-block; }
   .hero h1 .ul{ position:absolute; left:-2%; right:-2%; bottom:-.12em; width:104%; height:.22em; }
-  .hero-sub{ font-size:clamp(17px,2.3vw,22px); color:var(--ink); max-width:34ch; margin-top:26px; }
+  .hero-claim{ font-family:var(--display); font-size:clamp(16px,2vw,20px); letter-spacing:.02em; text-transform:uppercase; color:var(--red); margin-top:22px; }
+  .hero-sub{ font-size:clamp(16px,2vw,19px); color:var(--ink); max-width:46ch; margin-top:14px; }
   .hero-cta{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:32px; }
   .btn{ font-family:var(--serif); font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; padding:14px 26px; cursor:pointer; border:none; display:inline-flex; align-items:center; gap:9px; transition:transform .15s, background .15s, color .15s; }
   .btn-red{ background:var(--red); color:#fff; }
@@ -86,121 +85,79 @@
     .hero-logo{ justify-self:end; }
   }
 
-  /* ---------- SECTION ---------- */
   section{ position:relative; }
   .sec-pad{ padding:clamp(48px,8vw,104px) 0; }
   .sec-label{ position:relative; display:inline-block; margin-bottom:clamp(22px,3.5vw,38px); }
   .sec-label .ul{ position:absolute; left:0; bottom:-12px; width:108%; height:14px; }
 
-  /* about */
-  .about-text{ font-size:clamp(19px,2.7vw,27px); line-height:1.5; max-width:24ch; }
-  .about-text{ max-width:760px; }
-  .about-text b{ font-weight:600; }
-  .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
-  .chip{ font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.06em; text-transform:uppercase; border:1.5px solid var(--line); color:var(--mut); padding:9px 16px; display:inline-flex; align-items:center; gap:8px; }
-  .chip .dot{ width:7px; height:7px; border-radius:50%; background:var(--red); opacity:.55; }
+  /* TEXT BLOCK SECTIONS (Built for Dancers / Why Dancers) */
+  .text-block{ max-width:760px; }
+  .text-block h2{ font-family:var(--display); font-size:clamp(34px,5.5vw,58px); line-height:1.02; text-transform:uppercase; margin-bottom:22px; }
+  .text-block p{ font-size:clamp(17px,2vw,19px); line-height:1.65; color:var(--ink); margin-bottom:16px; }
+  .text-block p:last-child{ margin-bottom:0; }
+  .text-block p.lead{ font-size:clamp(19px,2.4vw,23px); color:var(--ink); }
 
-  /* shop / warming up */
-  .shop{ border-top:1px solid var(--line); }
-  .warmup{ text-align:center; padding:clamp(30px,6vw,70px) 0 clamp(20px,3vw,40px); position:relative; }
-  .warmup-mark{ position:relative; display:inline-block; padding:18px 40px; }
-  .warmup-mark .disp{ font-size:clamp(64px,15vw,150px); color:var(--ink); position:relative; z-index:1; }
-  .warmup-mark .mark{ left:-6%; top:-8%; width:112%; height:120%; }
-  .warmup p{ font-size:clamp(16px,2.2vw,20px); color:var(--mut); max-width:42ch; margin:8px auto 0; }
-  .warmup-cta{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
+  .divider{ border-top:1px solid var(--line); }
 
-  /* product grid (siap dipakai saat ada produk) */
-  .grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(14px,2.5vw,28px); }
-  @media (min-width:780px){ .grid{ grid-template-columns:repeat(3,1fr); } }
-  .card{ display:flex; flex-direction:column; }
-  .card-media{ position:relative; aspect-ratio:4/5; background:var(--paper2); overflow:hidden; }
-  .card-media img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
-  .card:hover .card-media img{ transform:scale(1.04); }
-  .save-badge{ position:absolute; top:12px; left:12px; font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.03em; color:#fff; background:var(--red); padding:4px 10px; }
-  .card-tag{ position:absolute; top:12px; right:12px; font-family:var(--hand); font-size:14px; color:var(--ink); background:var(--paper); padding:2px 9px; }
-  .card-body{ padding:14px 2px; }
-  .card-name{ font-family:var(--serif); font-weight:700; font-size:clamp(15px,2vw,18px); letter-spacing:-.01em; line-height:1.15; text-transform:uppercase; }
-  .card-price{ display:flex; align-items:baseline; gap:10px; margin-top:6px; font-family:var(--serif); font-weight:800; }
-  .price-now{ font-weight:800; font-size:19px; color:var(--ink); }
-  .price-old{ position:relative; font-weight:600; font-size:15px; color:var(--mut); }
-  .price-old .mark{ left:-4%; top:35%; width:108%; height:30%; }
-  .sizes{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
-  .size{ font-family:var(--serif); font-weight:600; font-size:12px; letter-spacing:.02em; border:1.5px solid var(--ink); background:transparent; color:var(--ink); padding:6px 11px; min-width:34px; cursor:pointer; transition:background .12s,color .12s; }
-  .size:hover{ background:var(--ink); color:var(--paper); }
-  .size.active{ background:var(--red); color:#fff; border-color:var(--red); }
-  .size.soldout{ opacity:.3; text-decoration:line-through; cursor:not-allowed; }
-  .add{ margin-top:12px; width:100%; border:none; background:var(--ink); color:var(--paper); font-family:var(--serif); font-weight:700; font-size:13px; letter-spacing:.05em; text-transform:uppercase; padding:13px; cursor:pointer; transition:background .15s; }
-  .add:hover{ background:var(--red); }
-  .hint{ font-family:var(--serif); font-weight:600; font-size:11px; letter-spacing:.02em; color:var(--red); min-height:15px; margin-top:6px; }
+  /* PROCESS / MANIFESTO (MA NEM TU WOLU) */
+  .process{ background:var(--ink); color:var(--paper); }
+  .process .label{ color:var(--red); }
+  .process h2{ font-family:var(--display); font-size:clamp(30px,5vw,52px); letter-spacing:.02em; text-transform:uppercase; margin-bottom:26px; color:#fff; }
+  .process .count{ display:flex; gap:.45em; font-family:var(--display); font-size:clamp(13px,1.8vw,16px); letter-spacing:.18em; color:var(--red); margin-bottom:18px; }
+  .process p{ font-size:clamp(16px,2vw,18px); line-height:1.7; color:#D9D4C8; max-width:680px; margin-bottom:16px; }
+  .process p:last-child{ margin-bottom:0; color:#fff; font-style:italic; }
 
-  /* ---------- VALUES (dark) ---------- */
+  /* EARLY ACCESS */
+  .early{ background:var(--paper2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .early-inner{ text-align:center; max-width:680px; margin:0 auto; }
+  .early h2{ font-family:var(--display); font-size:clamp(40px,7vw,84px); text-transform:uppercase; line-height:.92; position:relative; display:inline-block; }
+  .early h2 .ul{ position:absolute; left:-3%; right:-3%; bottom:-.1em; width:106%; height:.2em; }
+  .early .tag{ font-size:clamp(18px,2.4vw,22px); margin-top:18px; }
+  .early p{ font-size:clamp(15px,1.9vw,17px); color:var(--mut); margin-top:14px; line-height:1.65; }
+  .early-cta{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
+  .early-note{ font-size:13px; color:var(--mut); font-style:italic; margin-top:16px; }
+
+  /* VALUES (dark) */
   .values{ background:var(--ink); color:var(--paper); }
   .values .sec-label{ color:var(--red); }
-  .values-grid{ display:grid; grid-template-columns:1fr; gap:clamp(26px,3.5vw,44px); margin-top:8px; }
+  .values-intro{ font-size:clamp(19px,2.6vw,25px); max-width:680px; margin-top:-8px; margin-bottom:clamp(28px,4vw,46px); color:#EFEBE0; }
+  .values-grid{ display:grid; grid-template-columns:1fr; gap:clamp(26px,3.5vw,44px); }
   @media (min-width:760px){ .values-grid{ grid-template-columns:1fr 1fr; gap:clamp(30px,3vw,56px) clamp(40px,5vw,80px); } }
   .value{ display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start; }
   .value .num{ font-family:var(--display); font-size:clamp(30px,4vw,46px); color:var(--red); line-height:.9; }
-  .value h3{ font-family:var(--serif); font-weight:800; font-size:clamp(17px,2.2vw,21px); letter-spacing:-.01em; text-transform:uppercase; line-height:1.1; margin-bottom:9px; }
+  .value h3{ font-family:var(--serif); font-weight:800; font-size:clamp(16px,2vw,19px); letter-spacing:.04em; text-transform:uppercase; line-height:1.2; margin-bottom:9px; }
   .value p{ font-size:16px; line-height:1.55; color:#D9D4C8; }
 
-  /* ---------- FOOTER (dark) ---------- */
+  /* FOOTER (dark) */
   footer{ background:var(--ink2); color:var(--paper); border-top:1px solid #2A2722; }
   .foot-grid{ display:grid; grid-template-columns:1fr; gap:36px; padding:clamp(44px,6vw,76px) 0 clamp(26px,3vw,40px); }
   @media (min-width:720px){ .foot-grid{ grid-template-columns:1.4fr 1fr 1fr; } }
   .foot-brand img{ width:54px; height:54px; }
   .foot-brand .wm{ font-family:var(--display); font-size:34px; letter-spacing:.04em; margin-top:10px; }
-  .foot-brand .tag{ font-style:italic; color:#B9B4A8; margin-top:6px; }
+  .foot-brand .tag{ font-family:var(--hand); color:#D9D4C8; margin-top:8px; font-size:15px; }
+  .foot-brand .claim{ font-family:var(--display); font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--red); margin-top:10px; }
   .foot-col h4{ font-family:var(--serif); font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--red); margin-bottom:16px; }
   .foot-col a, .foot-col p{ display:block; color:#D9D4C8; font-size:15px; margin-bottom:11px; }
   .foot-col a:hover{ color:#fff; }
-  .socials{ display:flex; gap:14px; margin-top:2px; }
-  .socials a{ display:flex; }
-  .socials svg{ width:22px; height:22px; }
   .foot-bottom{ border-top:1px solid #2A2722; padding:18px 0; font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.06em; color:#8A857A; text-align:center; }
 
-  /* ---------- FLOATING WA ---------- */
+  /* FLOATING WA */
   .wa-float{ position:fixed; right:18px; bottom:18px; z-index:80; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 20px rgba(0,0,0,.25); transition:transform .15s; }
   .wa-float:hover{ transform:scale(1.06); }
   .wa-float svg{ width:30px; height:30px; fill:#fff; }
 
-  /* ---------- DRAWERS ---------- */
+  /* MENU DRAWER */
   .overlay{ position:fixed; inset:0; background:rgba(19,17,15,.55); z-index:90; opacity:0; pointer-events:none; transition:opacity .25s; }
   .overlay.open{ opacity:1; pointer-events:auto; }
-  .drawer{ position:fixed; top:0; height:100%; z-index:100; background:var(--paper); display:flex; flex-direction:column; transition:transform .3s cubic-bezier(.4,0,.1,1); }
-  .menu-drawer{ left:0; width:min(360px,86%); border-right:1px solid var(--line); transform:translateX(-100%); }
-  .menu-drawer.open{ transform:translateX(0); }
-  .cart-drawer{ right:0; width:min(410px,100%); border-left:3px solid var(--red); transform:translateX(100%); }
-  .cart-drawer.open{ transform:translateX(0); }
+  .drawer{ position:fixed; top:0; left:0; height:100%; width:min(360px,86%); z-index:100; background:var(--paper); border-right:1px solid var(--line); display:flex; flex-direction:column; transform:translateX(-100%); transition:transform .3s cubic-bezier(.4,0,.1,1); }
+  .drawer.open{ transform:translateX(0); }
   .drawer-head{ display:flex; align-items:center; justify-content:space-between; padding:18px var(--space); border-bottom:1px solid var(--line); }
   .drawer-head .dt{ font-family:var(--display); font-size:22px; letter-spacing:.04em; }
   .x-btn{ background:none; border:none; font-size:26px; cursor:pointer; color:var(--ink); line-height:1; }
   .menu-nav{ padding:14px var(--space); display:flex; flex-direction:column; }
   .menu-nav a{ font-family:var(--serif); font-weight:800; font-size:20px; letter-spacing:-.01em; text-transform:uppercase; padding:13px 0; border-bottom:1px solid var(--line); }
   .menu-nav a:hover{ color:var(--red); }
-  .menu-cat{ padding:22px var(--space); }
-  .menu-cat .ct{ font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--mut); margin-bottom:12px; }
-  .menu-cat .soon{ display:inline-block; font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--red); border:1.5px dashed var(--red); padding:7px 14px; }
-
-  /* cart body */
-  .cart-body{ flex:1; overflow-y:auto; padding:6px var(--space); }
-  .cart-empty{ font-style:italic; color:var(--mut); text-align:center; padding:60px 10px; font-size:17px; }
-  .line{ display:flex; gap:12px; padding:16px 0; border-bottom:1px solid var(--line); }
-  .line-name{ font-family:var(--serif); font-weight:700; font-size:14px; letter-spacing:-.01em; text-transform:uppercase; }
-  .line-meta{ font-size:13px; color:var(--mut); font-style:italic; margin-top:2px; }
-  .line-price{ font-family:var(--serif); font-weight:800; font-size:14px; color:var(--ink); margin-top:5px; }
-  .qty{ display:flex; align-items:center; margin-top:8px; }
-  .qty button{ width:27px; height:27px; border:1.5px solid var(--ink); background:none; cursor:pointer; font-size:15px; line-height:1; }
-  .qty span{ width:34px; text-align:center; font-family:var(--serif); font-weight:700; font-size:14px; }
-  .line-rm{ background:none; border:none; font-family:var(--serif); font-weight:600; font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--mut); cursor:pointer; align-self:flex-start; }
-  .line-rm:hover{ color:var(--red); }
-  .cart-foot{ border-top:1px solid var(--line); padding:18px var(--space); }
-  .total-row{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; font-family:var(--serif); }
-  .total-row .tl{ font-weight:700; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--mut); }
-  .total-row .tv{ font-weight:800; font-size:22px; color:var(--ink); }
-  .checkout{ width:100%; border:none; background:var(--red); color:#fff; font-family:var(--serif); font-weight:700; font-size:14px; letter-spacing:.05em; text-transform:uppercase; padding:15px; cursor:pointer; }
-  .checkout:hover{ background:var(--red-deep); }
-  .checkout:disabled{ background:var(--line); color:var(--mut); cursor:not-allowed; }
-  .cart-note{ font-size:12px; font-style:italic; color:var(--mut); text-align:center; margin-top:10px; line-height:1.5; }
+  .menu-nav a.toko-link{ color:var(--red); }
 
   @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; scroll-behavior:auto; } .reveal{ opacity:1; transform:none; } }
   :focus-visible{ outline:3px solid var(--red); outline-offset:2px; }
@@ -224,10 +181,7 @@
         <span class="wm">MORFODANS</span>
       </a>
       <div class="h-right">
-        <button class="icon-btn bag-wrap" onclick="openCart()" aria-label="Keranjang">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          <span class="bag-count" id="bag-count">0</span>
-        </button>
+        <a class="ea-pill" href="#early-access">Early Access</a>
       </div>
     </div>
   </header>
@@ -241,48 +195,75 @@
           <span id="hero-headline"></span>
           <svg class="mark ul" viewBox="0 0 600 26" preserveAspectRatio="none"><path d="M8 16 C 140 6 280 22 420 12 C 500 6 560 16 592 13"/></svg>
         </h1>
+        <p class="hero-claim" id="hero-claim"></p>
         <p class="hero-sub" id="hero-sub"></p>
         <div class="hero-cta">
-          <a class="btn btn-red" id="hero-cta" target="_blank" rel="noopener"></a>
-          <a class="btn btn-ghost" href="#shop">Lihat koleksi</a>
+          <a class="btn btn-red" href="#early-access">Daftar Early Access</a>
+          <a class="btn btn-ghost" href="#built">Pelajari Proses Kami</a>
         </div>
       </div>
       <img class="hero-logo reveal" src="logo.png" alt="MORFODANS" />
     </div>
   </section>
 
-  <!-- ABOUT (#2) -->
-  <section class="sec-pad" id="about">
+  <!-- BUILT FOR DANCERS -->
+  <section class="sec-pad divider" id="built">
     <div class="wrap">
       <span class="label sec-label reveal">
-        <span id="about-label"></span>
+        <span id="built-label"></span>
         <svg class="mark ul" viewBox="0 0 300 16" preserveAspectRatio="none"><path d="M5 9 C 70 3 120 14 180 8 C 240 3 280 12 296 8"/></svg>
       </span>
-      <p class="about-text reveal" id="about-text"></p>
-      <div class="chips reveal" id="about-chips"></div>
+      <div class="text-block reveal" id="built-content"></div>
     </div>
   </section>
 
-  <!-- SHOP (#9) -->
-  <section class="sec-pad shop" id="shop">
+  <!-- WHY DANCERS -->
+  <section class="sec-pad divider" id="why">
     <div class="wrap">
       <span class="label sec-label reveal">
-        <span id="shop-label"></span>
+        <span id="why-label"></span>
         <svg class="mark ul" viewBox="0 0 200 16" preserveAspectRatio="none"><path d="M5 9 C 50 3 90 14 130 8 C 165 4 188 11 196 8"/></svg>
       </span>
-      <div id="shop-content"></div>
+      <div class="text-block reveal" id="why-content"></div>
     </div>
   </section>
 
-  <!-- VALUES (#1) -->
+  <!-- PROCESS / MA NEM TU WOLU -->
+  <section class="sec-pad process" id="process">
+    <div class="wrap">
+      <div class="count reveal" id="process-count"></div>
+      <h2 class="reveal" id="process-title"></h2>
+      <div id="process-content"></div>
+    </div>
+  </section>
+
+  <!-- EARLY ACCESS -->
+  <section class="sec-pad early" id="early-access">
+    <div class="wrap early-inner">
+      <h2 class="reveal">
+        <span id="early-title"></span>
+        <svg class="mark ul" viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M6 11 C 100 3 200 18 300 9 C 350 4 388 13 396 10"/></svg>
+      </h2>
+      <p class="tag reveal" id="early-tag"></p>
+      <div class="reveal" id="early-content"></div>
+      <div class="early-cta reveal">
+        <a class="btn btn-red" id="early-form-btn" target="_blank" rel="noopener">Daftar Lewat Formulir</a>
+        <a class="btn btn-ink" id="early-wa-btn" target="_blank" rel="noopener">Chat WhatsApp</a>
+      </div>
+      <p class="early-note" id="early-note"></p>
+    </div>
+  </section>
+
+  <!-- VALUES -->
   <section class="sec-pad values" id="values">
     <div class="wrap">
       <span class="label sec-label reveal" id="values-label"></span>
+      <p class="values-intro reveal" id="values-intro"></p>
       <div class="values-grid" id="values-grid"></div>
     </div>
   </section>
 
-  <!-- FOOTER (#8) -->
+  <!-- FOOTER -->
   <footer id="footer">
     <div class="wrap">
       <div class="foot-grid">
@@ -290,18 +271,17 @@
           <img src="logo.png" alt="MORFODANS" />
           <div class="wm">MORFODANS™</div>
           <div class="tag" id="foot-tag"></div>
+          <div class="claim" id="foot-claim"></div>
         </div>
         <div class="foot-col">
-          <h4>Kontak</h4>
+          <h4>Hubungi</h4>
           <a id="foot-wa" target="_blank" rel="noopener"></a>
-          <a id="foot-email"></a>
-          <p id="foot-loc"></p>
-        </div>
-        <div class="foot-col">
-          <h4>Ikuti</h4>
           <a id="foot-ig" target="_blank" rel="noopener"></a>
           <a id="foot-tiktok" target="_blank" rel="noopener"></a>
-          <div class="socials" id="foot-socials"></div>
+        </div>
+        <div class="foot-col">
+          <h4>Lainnya</h4>
+          <a href="toko.html">Lihat Toko →</a>
         </div>
       </div>
     </div>
@@ -313,31 +293,13 @@
     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.578-1.255zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
   </a>
 
-  <!-- MENU DRAWER (#5) -->
-  <aside class="drawer menu-drawer" id="menu" aria-label="Menu">
+  <!-- MENU DRAWER -->
+  <aside class="drawer" id="menu" aria-label="Menu">
     <div class="drawer-head">
       <span class="dt">Menu</span>
       <button class="x-btn" onclick="closeMenu()" aria-label="Tutup">×</button>
     </div>
     <nav class="menu-nav" id="menu-nav"></nav>
-    <div class="menu-cat">
-      <div class="ct">Kategori</div>
-      <span class="soon" id="menu-soon"></span>
-    </div>
-  </aside>
-
-  <!-- CART DRAWER -->
-  <aside class="drawer cart-drawer" id="cart" aria-label="Keranjang">
-    <div class="drawer-head">
-      <span class="dt">Keranjang</span>
-      <button class="x-btn" onclick="closeCart()" aria-label="Tutup">×</button>
-    </div>
-    <div class="cart-body" id="cart-body"></div>
-    <div class="cart-foot">
-      <div class="total-row"><span class="tl">Total</span><span class="tv" id="cart-total">Rp 0</span></div>
-      <button class="checkout" id="checkout-btn" onclick="checkout()" disabled>Pesan via WhatsApp</button>
-      <p class="cart-note">Pesanan dikirim ke WhatsApp. Ongkir &amp; pembayaran dikonfirmasi langsung lewat chat.</p>
-    </div>
   </aside>
 
   <div class="overlay" id="overlay" onclick="closeAll()"></div>
@@ -352,80 +314,80 @@
    ================================================================= */
 
 const CONFIG = {
-  // Nomor WhatsApp: 62 + nomor TANPA 0 depan, tanpa spasi.
   waNumber: "6282141740234",
+  ticker: "BY DANCERS · FOR DANCERS · INDONESIA'S PIONEER CLOTHING BRAND FOR DANCERS · MORFODANS™",
 
-  // Teks berjalan di pita atas
-  ticker: "BY DANCER · FOR DANCER · WARMING UP · DROP PERDANA SEGERA · MORFODANS™",
-
-  // HERO
-  heroEyebrow: "by dancer · for dancer",
+  heroEyebrow: "BY DANCERS · FOR DANCERS",
   heroHeadline: "MOVE DIFFERENT",
-  heroSub: "Pakaian yang dirancang dari tubuh penari, untuk tubuh penari.",
-  heroCtaLabel: "Ikuti drop kami",          // tombol merah -> ke Instagram
+  heroClaim: "Indonesia's Pioneer Clothing Brand for Dancers.",
+  heroSub: "MORFODANS mengembangkan pakaian yang berangkat dari tubuh. Prosesnya dibangun melalui pengalaman bergerak, pengamatan terhadap praktik latihan, dan riset yang terus berlangsung di ruang tari.",
 
-  // TENTANG (setelah hero)
-  aboutLabel: "TENTANG MORFODANS",
-  aboutText: "MORFODANS adalah label pakaian yang dibuat penari, untuk penari. Kami ada karena kebutuhan tubuh penari berbeda — dan sering belum terpenuhi oleh pakaian olahraga biasa. Karena itu kami merancang setiap produk dari riset langsung di komunitas tari, dengan kualitas yang kami anggap hak setiap penari; kami hanya menjanjikan yang bisa kami buktikan, dan sebagian hasil penjualan kami kembalikan untuk mendukung komunitas dan ruang berkarya penari.",
-  // Chip kategori di bawah deskripsi (masih WARMING UP sampai kamu putuskan)
-  aboutChips: ["Koleksi — Warming Up"],
-
-  // SHOP
-  shopLabel: "SHOP",
-  comingSoon: "WARMING UP",
-  shopNote: "Koleksi pertama sedang dipanaskan. Drop perdana segera — pantau lewat Instagram & WhatsApp.",
-
-  // NILAI (sebelum footer)
-  valuesLabel: "WHAT WE STAND FOR",
-  values: [
-    { t: "Dibuat khusus untuk penari", d: "Tubuh penari punya kebutuhan yang berbeda dari atlet atau pengguna gym. Kami merancang setiap produk dengan kebutuhan itu sebagai titik awal." },
-    { t: "Kualitas", d: "Kami membuat produk sebaik yang kami bisa, dan tidak menurunkan mutunya hanya supaya terlihat lebih murah. Kualitas yang baik seharusnya bisa dijangkau setiap penari." },
-    { t: "Jujur soal produk", d: "Kami hanya menyampaikan hal yang bisa kami buktikan. Bahan, jahitan, dan daya tahannya kami uji lebih dulu sebelum kami ceritakan." },
-    { t: "Tumbuh bersama komunitas", d: "MORFODANS tumbuh dari komunitas tari, dan kami ingin ikut menjaganya. Sebagian hasil penjualan kami kembalikan untuk mendukung kegiatan dan ruang berkarya penari." },
-    { t: "Tetap fokus", d: "Kami memilih melayani penari dengan baik daripada melebar ke mana-mana. Menjaga fokus adalah cara kami menjaga alasan MORFODANS ada." },
-    { t: "Riset langsung", d: "Produk kami tumbuh dari pengamatan dan keterlibatan langsung di komunitas tari — bukan dari tren industri atau meniru merek lain." }
+  builtLabel: "BUILT FOR DANCERS",
+  builtParagraphs: [
+    "MORFODANS lahir dari pengalaman langsung seorang penari.",
+    "Bertahun-tahun berlatih, menjalani proses kreatif, dan tampil di atas panggung memperlihatkan bahwa tubuh memiliki kebutuhan yang tidak selalu terjawab oleh pakaian yang tersedia saat ini.",
+    "Sebagian besar pakaian dirancang untuk aktivitas umum atau olahraga lain. Sementara itu, latihan, eksplorasi, dan pengalaman panggung menghadirkan kondisi yang berbeda.",
+    "Pengalaman tersebut menjadi titik awal MORFODANS. Setiap koleksi dikembangkan melalui pengamatan, eksplorasi, dan riset yang berangkat dari praktik yang dijalani setiap hari."
   ],
 
-  // MENU (kiri)
+  whyLabel: "WHY DANCERS?",
+  whyParagraphs: [
+    "Menjadi penari lebih dari sekadar pekerjaan atau aktivitas.",
+    "Tubuh terus belajar melalui latihan, proses kreatif, dan pengalaman panggung. Banyak hal dipahami melalui gerak. Banyak hal ditemukan melalui praktik yang berlangsung berulang kali.",
+    "Namun hingga hari ini, sebagian besar pakaian yang digunakan masih berangkat dari kebutuhan aktivitas lain.",
+    "MORFODANS hadir untuk mempelajari tubuh tersebut lebih dekat dan mengembangkan pakaian yang tumbuh dari pengalaman bergerak."
+  ],
+
+  processCount: ["MA", "NEM", "TU", "WOLU."],
+  processTitle: "MA, NEM, TU, WOLU.",
+  processParagraphs: [
+    "MORFODANS baru memulai prosesnya.",
+    "Observasi, eksplorasi, dan riset sedang berlangsung untuk mengembangkan koleksi pertama yang berangkat dari tubuh dan pengalaman bergerak.",
+    "Banyak hal masih dipelajari. Banyak hal masih dicoba. Banyak hal masih mencari bentuknya.",
+    "Tidak banyak orang memiliki kesempatan untuk mengikuti sebuah brand sejak langkah pertamanya. Terlebih ketika proses tersebut berangkat langsung dari ruang latihan, pengalaman tubuh, dan praktik yang berlangsung setiap hari.",
+    "Proses itu sedang berlangsung sekarang."
+  ],
+
+  earlyTitle: "EARLY ACCESS",
+  earlyTag: "Ikuti prosesnya sejak awal.",
+  earlyParagraphs: [
+    "Early Access memberikan akses untuk mengikuti perkembangan MORFODANS mulai dari observasi, eksplorasi, riset, hingga lahirnya koleksi pertama.",
+    "Setiap pembaruan akan membawa Anda lebih dekat pada proses yang membentuk MORFODANS, bukan hanya pada produk yang akan hadir di kemudian hari.",
+    "Beberapa tahun dari sekarang, banyak orang mungkin hanya melihat produk yang telah selesai. Early Access memberi kesempatan untuk mengikuti bagaimana semuanya dimulai."
+  ],
+  // GANTI INI dengan link Google Form aslimu setelah dibuat.
+  // Saran 4 isian form: Nama, Instagram/TikTok handle, Email, Kota/Domisili.
+  earlyFormUrl: "https://forms.gle/GANTI-DENGAN-LINK-FORM-ASLIMU",
+  earlyNote: "Form belum aktif — kontak WhatsApp dulu jika ingin bergabung sekarang.",
+
+  valuesLabel: "MORFODANS VALUES",
+  valuesIntro: "Kami percaya pakaian yang baik berangkat dari pemahaman yang baik terhadap tubuh.",
+  values: [
+    { t: "Experience Before Assumption", d: "Setiap keputusan dimulai dari pengalaman langsung. Proses pengembangan berangkat dari latihan, praktik, dan pengalaman yang nyata." },
+    { t: "Observe Before Create", d: "Pengamatan menjadi bagian penting dari cara kami bekerja. Tubuh, gerak, dan pengalaman terus dipelajari sebelum diterjemahkan menjadi sebuah produk." },
+    { t: "Move With Purpose", d: "Setiap koleksi dikembangkan untuk mendukung tubuh saat bergerak, berlatih, dan berkarya." },
+    { t: "Stay In Process", d: "Pemahaman terhadap tubuh tidak pernah selesai. Karena itu observasi, eksplorasi, dan pembelajaran akan selalu menjadi bagian dari perjalanan MORFODANS." },
+    { t: "Respect The Practice", d: "Setiap koleksi dikembangkan sebagai bentuk penghormatan terhadap latihan, proses kreatif, dan pengalaman yang membentuk seorang penari." }
+  ],
+
   navLinks: [
-    { label: "Beranda", href: "#top" },
-    { label: "Shop", href: "#shop" },
-    { label: "Nilai Kami", href: "#values" },
+    { label: "Built For Dancers", href: "#built" },
+    { label: "Why Dancers", href: "#why" },
+    { label: "Proses", href: "#process" },
+    { label: "Early Access", href: "#early-access" },
+    { label: "Values", href: "#values" },
     { label: "Kontak", href: "#footer" }
   ],
 
-  // FOOTER
-  footerTagline: "by dancer · for dancer",
+  footerTagline: "by dancers · for dancers",
+  footerClaim: "Indonesia's Pioneer Clothing Brand for Dancers.",
   igHandle: "@morfodans_fit",
   igUrl: "https://instagram.com/morfodans_fit",
   tiktokHandle: "@morfodans.fitfordancer",
   tiktokUrl: "https://tiktok.com/@morfodans.fitfordancer",
   email: "morfo.dans@gmail.com",
-  location: "Trenggalek, East Java",
   copyright: "2026 © MORFODANS"
 };
-
-/* -----------------------------------------------------------------
-   DAFTAR PRODUK — sekarang KOSONG (WARMING UP).
-   Saat siap menambah produk, isi blok seperti contoh di dalam tanda
-   /* ... */ /* di bawah. Begitu ada isi, halaman Shop otomatis berubah
-   dari "WARMING UP" jadi grid produk.
-
-   Contoh format 1 produk:
-   { id:"001", name:"Nama Produk", price:199000, priceOld:0,
-     sizes:["S","M","L"], soldout:[], tag:"new", img:"" }
-   - price     : harga jual (angka saja, tanpa titik/Rp)
-   - priceOld  : harga sebelum diskon. Isi 0 kalau TIDAK diskon.
-                 (kalau diisi, harga dicoret + badge "Save X%" muncul otomatis)
-   - sizes     : ["One Size"] kalau satu ukuran
-   - soldout   : ukuran habis, mis. ["S","M"]. Kosong: []
-   - tag       : label kecil ("new"/"limited"). Kosong: ""
-   - img       : nama file foto, mis. "produk.jpg". Kosong "" = placeholder
-   ----------------------------------------------------------------- */
-
-const PRODUCTS = [
-  // (kosong dulu — tambah produk di sini nanti)
-];
 
 /* =================================================================
    ╔════════════════════════════════════════════════════════════╗
@@ -433,152 +395,62 @@ const PRODUCTS = [
    ╚════════════════════════════════════════════════════════════╝
    ================================================================= */
 
-const cart = [];
-const selectedSize = {};
-const HAND_STRIKE = '<svg class="mark" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M4 13 C 30 7 60 15 96 8"/></svg>';
-const HAND_CIRCLE = '<svg class="mark" viewBox="0 0 520 200" preserveAspectRatio="none"><path d="M262 16 C150 10 40 44 44 100 C48 158 200 188 322 182 C452 176 500 120 482 74 C466 34 360 14 226 22"/></svg>';
-
-function rupiah(n){ if(!n||n<=0) return "Rp \u2014"; return "Rp " + n.toLocaleString("id-ID"); }
 function waLink(text){ return "https://wa.me/" + CONFIG.waNumber + "?text=" + encodeURIComponent(text); }
+function paras(arr){ return arr.map(p => `<p>${p}</p>`).join(""); }
 
 function applyConfig(){
-  // ticker
   document.getElementById("ticker").innerHTML =
     ("<span>" + CONFIG.ticker.replaceAll("·","<b>·</b>") + " &nbsp;&nbsp;</span>").repeat(2);
-  // hero
+
   document.getElementById("hero-eyebrow").textContent = CONFIG.heroEyebrow;
   document.getElementById("hero-headline").textContent = CONFIG.heroHeadline;
+  document.getElementById("hero-claim").textContent = CONFIG.heroClaim;
   document.getElementById("hero-sub").textContent = CONFIG.heroSub;
-  const hc = document.getElementById("hero-cta"); hc.textContent = CONFIG.heroCtaLabel; hc.href = CONFIG.igUrl;
-  // about
-  document.getElementById("about-label").textContent = CONFIG.aboutLabel;
-  document.getElementById("about-text").textContent = CONFIG.aboutText;
-  document.getElementById("about-chips").innerHTML =
-    CONFIG.aboutChips.map(c => `<span class="chip"><span class="dot"></span>${c}</span>`).join("");
-  // shop label
-  document.getElementById("shop-label").textContent = CONFIG.shopLabel;
-  // values
+
+  document.getElementById("built-label").textContent = CONFIG.builtLabel;
+  document.getElementById("built-content").innerHTML = paras(CONFIG.builtParagraphs);
+
+  document.getElementById("why-label").textContent = CONFIG.whyLabel;
+  document.getElementById("why-content").innerHTML = paras(CONFIG.whyParagraphs);
+
+  document.getElementById("process-count").innerHTML = CONFIG.processCount.map(c=>`<span>${c}</span>`).join("");
+  document.getElementById("process-title").textContent = CONFIG.processTitle;
+  document.getElementById("process-content").innerHTML =
+    CONFIG.processParagraphs.map(p => `<p class="reveal">${p}</p>`).join("");
+
+  document.getElementById("early-title").textContent = CONFIG.earlyTitle;
+  document.getElementById("early-tag").textContent = CONFIG.earlyTag;
+  document.getElementById("early-content").innerHTML = paras(CONFIG.earlyParagraphs);
+  const efb = document.getElementById("early-form-btn"); efb.href = CONFIG.earlyFormUrl;
+  const ewb = document.getElementById("early-wa-btn"); ewb.href = waLink("Halo MORFODANS! Saya mau ikut Early Access.");
+  document.getElementById("early-note").textContent = CONFIG.earlyNote;
+
   document.getElementById("values-label").textContent = CONFIG.valuesLabel;
+  document.getElementById("values-intro").textContent = CONFIG.valuesIntro;
   document.getElementById("values-grid").innerHTML = CONFIG.values.map((v,i) => `
     <div class="value reveal">
       <div class="num">${String(i+1).padStart(2,"0")}</div>
       <div><h3>${v.t}</h3><p>${v.d}</p></div>
     </div>`).join("");
-  // menu
+
   document.getElementById("menu-nav").innerHTML =
-    CONFIG.navLinks.map(l => `<a href="${l.href}" onclick="closeMenu()">${l.label}</a>`).join("");
-  document.getElementById("menu-soon").textContent = CONFIG.comingSoon;
-  // footer
+    CONFIG.navLinks.map(l => `<a href="${l.href}" onclick="closeMenu()">${l.label}</a>`).join("") +
+    `<a class="toko-link" href="toko.html">Lihat Toko →</a>`;
+
   document.getElementById("foot-tag").textContent = CONFIG.footerTagline;
+  document.getElementById("foot-claim").textContent = CONFIG.footerClaim;
   const fw = document.getElementById("foot-wa"); fw.textContent = "WhatsApp"; fw.href = waLink("Halo MORFODANS!");
-  const fe = document.getElementById("foot-email"); fe.textContent = CONFIG.email; fe.href = "mailto:" + CONFIG.email;
-  document.getElementById("foot-loc").textContent = CONFIG.location;
   const fi = document.getElementById("foot-ig"); fi.textContent = "Instagram " + CONFIG.igHandle; fi.href = CONFIG.igUrl;
   const ft = document.getElementById("foot-tiktok"); ft.textContent = "TikTok " + CONFIG.tiktokHandle; ft.href = CONFIG.tiktokUrl;
-  document.getElementById("foot-socials").innerHTML =
-    `<a href="${CONFIG.igUrl}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#D9D4C8" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#D9D4C8" stroke="none"/></svg></a>`+
-    `<a href="${CONFIG.tiktokUrl}" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="#D9D4C8"><path d="M16 8.2a6.1 6.1 0 003.6 1.2V6.7a3.6 3.6 0 01-1.9-.6 3.6 3.6 0 01-1.7-3H11.4v11.2a2.1 2.1 0 11-2.1-2.1c.2 0 .4 0 .6.1V7.5a5 5 0 00-.6 0 5 5 0 105 5V8.7c.4.3.8.5 1.3.6z"/></svg></a>`;
   document.getElementById("foot-copy").textContent = CONFIG.copyright;
-  // floating WA
+
   document.getElementById("wa-float").href = waLink("Halo MORFODANS! Saya mau tanya.");
 }
 
-function renderShop(){
-  const el = document.getElementById("shop-content");
-  if(!PRODUCTS.length){
-    el.innerHTML = `
-      <div class="warmup reveal">
-        <div class="warmup-mark">
-          <span class="disp">${CONFIG.comingSoon}</span>
-          ${HAND_CIRCLE}
-        </div>
-        <p>${CONFIG.shopNote}</p>
-        <div class="warmup-cta">
-          <a class="btn btn-red" href="${CONFIG.igUrl}" target="_blank" rel="noopener">Ikuti Instagram</a>
-          <a class="btn btn-ink" href="${waLink("Halo MORFODANS! Saya mau info drop perdana.")}" target="_blank" rel="noopener">Tanya via WhatsApp</a>
-        </div>
-      </div>`;
-    return;
-  }
-  el.innerHTML = `<div class="grid">` + PRODUCTS.map(p => {
-    const one = p.sizes.length === 1; if(one) selectedSize[p.id] = p.sizes[0];
-    const media = p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : "";
-    const save = (p.priceOld && p.priceOld > p.price)
-      ? `<span class="save-badge">Save ${Math.round((1 - p.price/p.priceOld)*100)}%</span>` : "";
-    const tag = p.tag ? `<span class="card-tag">${p.tag}</span>` : "";
-    const oldPrice = (p.priceOld && p.priceOld > p.price)
-      ? `<span class="price-old">${rupiah(p.priceOld)}${HAND_STRIKE}</span>` : "";
-    const sizes = one ? `<span class="size active">${p.sizes[0]}</span>`
-      : p.sizes.map(s => { const o=(p.soldout||[]).includes(s);
-          return `<button class="size ${o?'soldout':''}" ${o?'disabled':''} onclick="pickSize('${p.id}','${s}',this)">${s}</button>`; }).join("");
-    return `<article class="card reveal">
-      <div class="card-media">${save}${tag}${media}</div>
-      <div class="card-body">
-        <div class="card-name">${p.name}</div>
-        <div class="card-price"><span class="price-now">${rupiah(p.price)}</span>${oldPrice}</div>
-        <div class="sizes">${sizes}</div>
-        <div class="hint" id="hint-${p.id}"></div>
-        <button class="add" onclick="addToCart('${p.id}')">+ Tambah ke keranjang</button>
-      </div></article>`;
-  }).join("") + `</div>`;
-  observeReveals();
-}
-
-function pickSize(id,size,btn){
-  selectedSize[id]=size;
-  const card=btn.closest(".card"); card.querySelectorAll(".size").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active"); document.getElementById("hint-"+id).textContent="";
-}
-function addToCart(id){
-  const p=PRODUCTS.find(x=>x.id===id); const size=selectedSize[id];
-  if(!size){ document.getElementById("hint-"+id).textContent="↑ pilih ukuran dulu"; return; }
-  const key=id+"__"+size; const f=cart.find(l=>l.key===key);
-  if(f){ f.qty++; } else { cart.push({key,id,name:p.name,price:p.price,size,qty:1}); }
-  renderCart(); openCart();
-}
-function changeQty(key,d){ const l=cart.find(x=>x.key===key); if(!l)return; l.qty+=d; if(l.qty<=0) cart.splice(cart.indexOf(l),1); renderCart(); }
-function removeLine(key){ const i=cart.findIndex(x=>x.key===key); if(i>-1)cart.splice(i,1); renderCart(); }
-function cartTotal(){ return cart.reduce((s,l)=>s+l.price*l.qty,0); }
-
-function renderCart(){
-  document.getElementById("bag-count").textContent = cart.reduce((n,l)=>n+l.qty,0);
-  document.getElementById("cart-total").textContent = rupiah(cartTotal());
-  const body=document.getElementById("cart-body"); const btn=document.getElementById("checkout-btn");
-  if(!cart.length){ body.innerHTML=`<div class="cart-empty">Keranjang masih kosong.</div>`; btn.disabled=true; return; }
-  btn.disabled=false;
-  body.innerHTML = cart.map(l=>`
-    <div class="line">
-      <div style="flex:1">
-        <div class="line-name">${l.name}</div>
-        <div class="line-meta">Ukuran: ${l.size}</div>
-        <div class="line-price">${rupiah(l.price)}</div>
-        <div class="qty">
-          <button onclick="changeQty('${l.key}',-1)" aria-label="Kurangi">−</button>
-          <span>${l.qty}</span>
-          <button onclick="changeQty('${l.key}',1)" aria-label="Tambah">+</button>
-        </div>
-      </div>
-      <button class="line-rm" onclick="removeLine('${l.key}')">Hapus</button>
-    </div>`).join("");
-}
-function checkout(){
-  if(!cart.length) return;
-  let m="Halo MORFODANS! \uD83D\uDC4B\nSaya mau pesan:\n\n";
-  cart.forEach((l,i)=>{ const s=(l.size&&l.size!=="One Size")?" — Ukuran "+l.size:" — One Size";
-    m+=(i+1)+". "+l.name+s+" (x"+l.qty+") — "+rupiah(l.price*l.qty)+"\n"; });
-  m+="\nTotal: "+rupiah(cartTotal())+"\n\nMohon info ketersediaan stok (ready/pre-order), ongkir ke alamat saya, dan cara pembayaran. Terima kasih \uD83D\uDE4F";
-  window.open(waLink(m),"_blank");
-}
-
-/* drawers */
 function openMenu(){ document.getElementById("menu").classList.add("open"); document.getElementById("overlay").classList.add("open"); }
-function closeMenu(){ document.getElementById("menu").classList.remove("open"); maybeOverlay(); }
-function openCart(){ document.getElementById("cart").classList.add("open"); document.getElementById("overlay").classList.add("open"); }
-function closeCart(){ document.getElementById("cart").classList.remove("open"); maybeOverlay(); }
-function maybeOverlay(){ if(!document.querySelector(".drawer.open")) document.getElementById("overlay").classList.remove("open"); }
-function closeAll(){ closeMenu(); closeCart(); }
+function closeMenu(){ document.getElementById("menu").classList.remove("open"); document.getElementById("overlay").classList.remove("open"); }
+function closeAll(){ closeMenu(); }
 
-/* reveal on scroll */
 let _io;
 function observeReveals(){
   if(!("IntersectionObserver" in window)){ document.querySelectorAll(".reveal").forEach(e=>e.classList.add("in")); return; }
@@ -587,8 +459,6 @@ function observeReveals(){
 }
 
 applyConfig();
-renderShop();
-renderCart();
 observeReveals();
 document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeAll(); });
 </script>
