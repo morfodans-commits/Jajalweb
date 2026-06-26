@@ -33,6 +33,7 @@
     -webkit-font-smoothing:antialiased; overflow-x:clip;
   }
   a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
   .wrap{ max-width:var(--maxw); margin:0 auto; padding-left:var(--space); padding-right:var(--space); }
   .disp{ font-family:var(--display); font-weight:400; letter-spacing:.01em; line-height:.9; text-transform:uppercase; }
   .label{ font-family:var(--serif); font-weight:800; font-size:clamp(12px,1.5vw,14px); letter-spacing:.14em; text-transform:uppercase; color:var(--red); }
@@ -60,8 +61,8 @@
   .brand{ display:flex; align-items:center; gap:9px; }
   .brand img{ width:32px; height:32px; }
   .brand .wm{ font-family:var(--serif); font-weight:800; font-size:18px; letter-spacing:-.01em; text-transform:uppercase; color:var(--ink); line-height:1; }
-  .ea-pill{ font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.05em; text-transform:uppercase; background:var(--red); color:#fff; padding:9px 16px; white-space:nowrap; transition:background .15s; }
-  .ea-pill:hover{ background:var(--red-deep); }
+  .pill-btn{ font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.05em; text-transform:uppercase; background:var(--red); color:#fff; padding:9px 16px; white-space:nowrap; transition:background .15s; }
+  .pill-btn:hover{ background:var(--red-deep); }
 
   /* HERO */
   .hero{ padding:clamp(52px,9vw,120px) 0 clamp(44px,7vw,96px); position:relative; }
@@ -88,18 +89,25 @@
   section{ position:relative; }
   .sec-pad{ padding:clamp(48px,8vw,104px) 0; }
   .sec-label{ position:relative; display:inline-block; margin-bottom:clamp(22px,3.5vw,38px); }
-  .sec-label .ul{ position:absolute; left:0; bottom:-12px; width:108%; height:14px; }
 
-  /* TEXT BLOCK SECTIONS (Built for Dancers / Why Dancers) */
+  /* TEXT BLOCK */
   .text-block{ max-width:760px; }
-  .text-block h2{ font-family:var(--display); font-size:clamp(34px,5.5vw,58px); line-height:1.02; text-transform:uppercase; margin-bottom:22px; }
   .text-block p{ font-size:clamp(17px,2vw,19px); line-height:1.65; color:var(--ink); margin-bottom:16px; }
   .text-block p:last-child{ margin-bottom:0; }
-  .text-block p.lead{ font-size:clamp(19px,2.4vw,23px); color:var(--ink); }
 
   .divider{ border-top:1px solid var(--line); }
 
-  /* PROCESS / MANIFESTO (MA NEM TU WOLU) */
+  /* GALLERY — THE BODY BEHIND MORFODANS */
+  .gallery-section{ background:var(--paper2); }
+  .gallery-intro{ max-width:760px; margin-bottom:clamp(32px,5vw,56px); }
+  .gallery-intro p{ font-size:clamp(16px,2vw,18px); line-height:1.65; color:var(--ink); margin-bottom:14px; }
+  .gallery-intro p:last-child{ margin-bottom:0; }
+  .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:clamp(16px,2.5vw,28px); }
+  .gallery-item{ position:relative; aspect-ratio:1; background:#D9D4C8; border-radius:3px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .gallery-item img{ width:100%; height:100%; object-fit:cover; }
+  .gallery-item span{ font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--mut); text-align:center; padding:0 12px; }
+
+  /* PROCESS — MA NEM TU WOLU */
   .process{ background:var(--ink); color:var(--paper); }
   .process .label{ color:var(--red); }
   .process h2{ font-family:var(--display); font-size:clamp(30px,5vw,52px); letter-spacing:.02em; text-transform:uppercase; margin-bottom:26px; color:#fff; }
@@ -107,17 +115,31 @@
   .process p{ font-size:clamp(16px,2vw,18px); line-height:1.7; color:#D9D4C8; max-width:680px; margin-bottom:16px; }
   .process p:last-child{ margin-bottom:0; color:#fff; font-style:italic; }
 
-  /* EARLY ACCESS */
-  .early{ background:var(--paper2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .early-inner{ text-align:center; max-width:680px; margin:0 auto; }
-  .early h2{ font-family:var(--display); font-size:clamp(40px,7vw,84px); text-transform:uppercase; line-height:.92; position:relative; display:inline-block; }
-  .early h2 .ul{ position:absolute; left:-3%; right:-3%; bottom:-.1em; width:106%; height:.2em; }
-  .early .tag{ font-size:clamp(18px,2.4vw,22px); margin-top:18px; }
-  .early p{ font-size:clamp(15px,1.9vw,17px); color:var(--mut); margin-top:14px; line-height:1.65; }
-  .early-cta{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
-  .early-note{ font-size:13px; color:var(--mut); font-style:italic; margin-top:16px; }
+  /* EKSPLORASI */
+  .eksplorasi{ background:var(--paper2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .eksplorasi-inner{ max-width:760px; }
+  .eksplorasi-title{ font-family:var(--display); font-size:clamp(38px,6.5vw,60px); text-transform:uppercase; line-height:.96; margin-bottom:clamp(22px,3.5vw,32px); color:var(--ink); }
+  .eksplorasi-intro{ font-size:clamp(16px,2vw,18px); line-height:1.65; color:var(--ink); margin-bottom:clamp(22px,3.5vw,32px); }
+  .benefit-title{ font-family:var(--serif); font-weight:800; font-size:clamp(13px,1.6vw,15px); letter-spacing:.05em; text-transform:uppercase; color:var(--red); margin-bottom:14px; }
+  .benefit-list, .community-list{ margin-bottom:clamp(22px,3.5vw,32px); }
+  .benefit-list li, .community-list li{ font-size:clamp(15px,1.9vw,17px); line-height:1.6; color:var(--ink); margin-bottom:10px; padding-left:18px; position:relative; }
+  .benefit-list li::before, .community-list li::before{ content:"•"; color:var(--red); position:absolute; left:0; }
+  .benefit-list li:last-child, .community-list li:last-child{ margin-bottom:0; }
+  .community-title{ font-family:var(--serif); font-weight:800; font-size:clamp(13px,1.6vw,15px); letter-spacing:.05em; text-transform:uppercase; color:var(--red); margin-bottom:14px; }
+  .eksplorasi-note{ font-size:clamp(15px,1.9vw,17px); line-height:1.65; color:var(--ink); font-style:italic; margin-bottom:clamp(26px,4vw,36px); }
+  .eksplorasi-cta{ display:flex; gap:14px; flex-wrap:wrap; }
 
-  /* VALUES (dark) */
+  /* FEATURED PRODUCTS */
+  .products-intro{ max-width:760px; margin-bottom:clamp(28px,4.5vw,44px); }
+  .products-intro p{ font-size:clamp(16px,2vw,18px); line-height:1.65; color:var(--ink); margin-bottom:14px; }
+  .products-intro p:last-child{ margin-bottom:0; }
+  .products-grid{ display:grid; grid-template-columns:1fr; gap:clamp(24px,4vw,40px); }
+  @media (min-width:720px){ .products-grid{ grid-template-columns:1fr 1fr; } }
+  .product-card{ border:1px solid var(--line); padding:clamp(22px,3.5vw,30px); }
+  .product-card h3{ font-family:var(--display); font-size:clamp(20px,3vw,26px); letter-spacing:.01em; text-transform:uppercase; margin-bottom:12px; color:var(--ink); }
+  .product-card p{ font-size:clamp(15px,1.9vw,17px); line-height:1.6; color:var(--ink); margin-bottom:18px; }
+
+  /* VALUES */
   .values{ background:var(--ink); color:var(--paper); }
   .values .sec-label{ color:var(--red); }
   .values-intro{ font-size:clamp(19px,2.6vw,25px); max-width:680px; margin-top:-8px; margin-bottom:clamp(28px,4vw,46px); color:#EFEBE0; }
@@ -128,7 +150,7 @@
   .value h3{ font-family:var(--serif); font-weight:800; font-size:clamp(16px,2vw,19px); letter-spacing:.04em; text-transform:uppercase; line-height:1.2; margin-bottom:9px; }
   .value p{ font-size:16px; line-height:1.55; color:#D9D4C8; }
 
-  /* FOOTER (dark) */
+  /* FOOTER */
   footer{ background:var(--ink2); color:var(--paper); border-top:1px solid #2A2722; }
   .foot-grid{ display:grid; grid-template-columns:1fr; gap:36px; padding:clamp(44px,6vw,76px) 0 clamp(26px,3vw,40px); }
   @media (min-width:720px){ .foot-grid{ grid-template-columns:1.4fr 1fr 1fr; } }
@@ -137,7 +159,7 @@
   .foot-brand .tag{ font-family:var(--hand); color:#D9D4C8; margin-top:8px; font-size:15px; }
   .foot-brand .claim{ font-family:var(--display); font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--red); margin-top:10px; }
   .foot-col h4{ font-family:var(--serif); font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--red); margin-bottom:16px; }
-  .foot-col a, .foot-col p{ display:block; color:#D9D4C8; font-size:15px; margin-bottom:11px; }
+  .foot-col a{ display:block; color:#D9D4C8; font-size:15px; margin-bottom:11px; }
   .foot-col a:hover{ color:#fff; }
   .foot-bottom{ border-top:1px solid #2A2722; padding:18px 0; font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.06em; color:#8A857A; text-align:center; }
 
@@ -157,7 +179,7 @@
   .menu-nav{ padding:14px var(--space); display:flex; flex-direction:column; }
   .menu-nav a{ font-family:var(--serif); font-weight:800; font-size:20px; letter-spacing:-.01em; text-transform:uppercase; padding:13px 0; border-bottom:1px solid var(--line); }
   .menu-nav a:hover{ color:var(--red); }
-  .menu-nav a.toko-link{ color:var(--red); }
+  .menu-nav a.cross-link{ color:var(--red); }
 
   @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; scroll-behavior:auto; } .reveal{ opacity:1; transform:none; } }
   :focus-visible{ outline:3px solid var(--red); outline-offset:2px; }
@@ -165,10 +187,8 @@
 </head>
 <body id="top">
 
-  <!-- TICKER -->
   <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
 
-  <!-- HEADER -->
   <header>
     <div class="wrap head-in">
       <div class="h-left">
@@ -181,7 +201,7 @@
         <span class="wm">MORFODANS</span>
       </a>
       <div class="h-right">
-        <a class="ea-pill" href="#early-access">Early Access</a>
+        <a class="pill-btn" href="#eksplorasi">EKSPLORASI</a>
       </div>
     </div>
   </header>
@@ -190,16 +210,16 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="hero-eyebrow" id="hero-eyebrow"></p>
+        <p class="hero-eyebrow">BY DANCERS • FOR DANCERS</p>
         <h1 class="disp">
-          <span id="hero-headline"></span>
+          MOVE DIFFERENT
           <svg class="mark ul" viewBox="0 0 600 26" preserveAspectRatio="none"><path d="M8 16 C 140 6 280 22 420 12 C 500 6 560 16 592 13"/></svg>
         </h1>
-        <p class="hero-claim" id="hero-claim"></p>
-        <p class="hero-sub" id="hero-sub"></p>
+        <p class="hero-claim">Indonesia's Pioneer Clothing Brand for Dancers.</p>
+        <p class="hero-sub">MORFODANS mengembangkan pakaian yang berangkat dari tubuh tari. Prosesnya dibangun melalui pengalaman bergerak, pengamatan terhadap praktik tari, dan riset yang terus berlangsung di ruang tari.</p>
         <div class="hero-cta">
-          <a class="btn btn-red" href="#early-access">Daftar Early Access</a>
-          <a class="btn btn-ghost" href="#built">Pelajari Proses Kami</a>
+          <a class="btn btn-red" href="#eksplorasi">Bergabung Eksplorasi</a>
+          <a class="btn btn-ghost" href="#built">Pelajari Lebih Lanjut</a>
         </div>
       </div>
       <img class="hero-logo reveal" src="logo.png" alt="MORFODANS" />
@@ -209,56 +229,126 @@
   <!-- BUILT FOR DANCERS -->
   <section class="sec-pad divider" id="built">
     <div class="wrap">
-      <span class="label sec-label reveal">
-        <span id="built-label"></span>
-        <svg class="mark ul" viewBox="0 0 300 16" preserveAspectRatio="none"><path d="M5 9 C 70 3 120 14 180 8 C 240 3 280 12 296 8"/></svg>
-      </span>
-      <div class="text-block reveal" id="built-content"></div>
+      <span class="label sec-label reveal">BUILT FOR DANCERS</span>
+      <div class="text-block reveal">
+        <p>MORFODANS lahir dari pengalaman langsung founder yang merupakan seorang penari.</p>
+        <p>Bertahun-tahun berlatih, menjalani proses kreatif, dan tampil di atas panggung memberikan pemahaman bahwa tubuh tari memiliki kebutuhan yang tidak selalu terjawab oleh pakaian yang tersedia di era modern ini.</p>
+        <p>Sebagian besar pakaian dirancang untuk aktivitas umum dan atau olahraga lain. Sementara itu, latihan, eksplorasi, dan pengalaman panggung menghadirkan kondisi yang berbeda.</p>
+        <p>Pemahaman tersebut menjadi titik awal MORFODANS. Setiap koleksi dikembangkan melalui pengamatan, eksplorasi, dan riset yang berangkat dari praktik tari yang dijalani setiap hari.</p>
+      </div>
     </div>
   </section>
 
   <!-- WHY DANCERS -->
   <section class="sec-pad divider" id="why">
     <div class="wrap">
-      <span class="label sec-label reveal">
-        <span id="why-label"></span>
-        <svg class="mark ul" viewBox="0 0 200 16" preserveAspectRatio="none"><path d="M5 9 C 50 3 90 14 130 8 C 165 4 188 11 196 8"/></svg>
-      </span>
-      <div class="text-block reveal" id="why-content"></div>
+      <span class="label sec-label reveal">WHY DANCERS?</span>
+      <div class="text-block reveal">
+        <p>Menjadi penari lebih dari sekadar pekerjaan atau aktivitas.</p>
+        <p>Tubuh terus belajar melalui latihan, proses kreatif, dan pengalaman. Banyak hal dipahami melalui gerak. Banyak hal ditemukan melalui praktik jangka panjang.</p>
+        <p>Namun kami memahami hingga hari ini, sebagian besar pakaian yang digunakan masih berangkat dari kebutuhan aktivitas lain.</p>
+        <p>MORFODANS hadir untuk mempelajari tubuh tari lebih dekat dan mengembangkan pakaian yang tumbuh dari pengalaman pelaku.</p>
+      </div>
     </div>
   </section>
 
-  <!-- PROCESS / MA NEM TU WOLU -->
+  <!-- THE BODY BEHIND MORFODANS -->
+  <section class="sec-pad gallery-section divider" id="body-behind">
+    <div class="wrap">
+      <span class="label sec-label reveal">THE BODY BEHIND MORFODANS</span>
+      <div class="gallery-intro reveal">
+        <p>Setiap proses berangkat dari ruang yang nyata.</p>
+        <p>Latihan, perjalanan, panggung, dan proses kreatif menjadi bagian dari pengamatan yang terus berlangsung hingga saat ini.</p>
+        <p>MORFODANS tidak dibangun dari asumsi tentang bagaimana tubuh bergerak. Pemahaman tersebut tumbuh melalui pengalaman yang dijalani secara langsung.</p>
+        <p>Foto dan dokumentasi berikut merupakan sebagian kecil dari proses yang membentuk perjalanan MORFODANS.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item"><span>FOTO LATIHAN</span></div>
+        <div class="gallery-item"><span>FOTO STUDIO</span></div>
+        <div class="gallery-item"><span>FOTO PANGGUNG</span></div>
+        <div class="gallery-item"><span>FOTO EKSPLORASI</span></div>
+        <div class="gallery-item"><span>FOTO OBSERVASI</span></div>
+        <div class="gallery-item"><span>VIDEO PROSES</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MA NEM TU WOLU -->
   <section class="sec-pad process" id="process">
     <div class="wrap">
-      <div class="count reveal" id="process-count"></div>
-      <h2 class="reveal" id="process-title"></h2>
-      <div id="process-content"></div>
+      <div class="count reveal"><span>MA</span><span>NEM</span><span>TU</span><span>WOLU.</span></div>
+      <h2 class="reveal">MA, NEM, TU, WOLU.</h2>
+      <p class="reveal">MORFODANS baru memulai prosesnya.</p>
+      <p class="reveal">Observasi, eksplorasi, dan riset sedang berlangsung untuk mengembangkan koleksi berikutnya yang berangkat dari tubuh tari dan pengalaman pelaku.</p>
+      <p class="reveal">Eksplorasi memberi kesempatan untuk mengikuti proses tersebut sejak awal, memberi masukan terhadap arah yang sedang dikembangkan, dan tumbuh bersama MORFODANS sejak langkah pertamanya.</p>
     </div>
   </section>
 
-  <!-- EARLY ACCESS -->
-  <section class="sec-pad early" id="early-access">
-    <div class="wrap early-inner">
-      <h2 class="reveal">
-        <span id="early-title"></span>
-        <svg class="mark ul" viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M6 11 C 100 3 200 18 300 9 C 350 4 388 13 396 10"/></svg>
-      </h2>
-      <p class="tag reveal" id="early-tag"></p>
-      <div class="reveal" id="early-content"></div>
-      <div class="early-cta reveal">
-        <a class="btn btn-red" id="early-form-btn" target="_blank" rel="noopener">Daftar Lewat Formulir</a>
-        <a class="btn btn-ink" id="early-wa-btn" target="_blank" rel="noopener">Chat WhatsApp</a>
+  <!-- MENARILAH BERSAMA KAMI / EKSPLORASI -->
+  <section class="sec-pad eksplorasi" id="eksplorasi">
+    <div class="wrap eksplorasi-inner">
+      <h2 class="eksplorasi-title reveal">MENARILAH<br/>BERSAMA KAMI</h2>
+      <p class="eksplorasi-intro reveal">Eksplorasi memberi kesempatan untuk menjadi bagian dari fase awal MORFODANS. Bukan hanya mengikuti perkembangan koleksi yang sedang dikembangkan, tetapi juga ikut memberi pengaruh terhadap arah yang akan tumbuh ke depan.</p>
+
+      <div class="reveal">
+        <p class="benefit-title">Anggota Eksplorasi akan mendapatkan:</p>
+        <ul class="benefit-list">
+          <li>Kesempatan memberikan masukan dan vote terhadap koleksi mendatang</li>
+          <li>Early bird access dan penawaran khusus saat koleksi diluncurkan</li>
+          <li>Akses ke konten eksklusif yang tidak dipublikasikan secara umum</li>
+          <li>Akses ke komunitas WhatsApp MORFODANS</li>
+        </ul>
       </div>
-      <p class="early-note" id="early-note"></p>
+
+      <div class="reveal">
+        <p class="community-title">Komunitas ini dibangun sebagai ruang untuk:</p>
+        <ul class="community-list">
+          <li>Berbagi pengalaman</li>
+          <li>Berbagi karya</li>
+          <li>Berbagi informasi ruang berkarya</li>
+          <li>Berbagi informasi job dan project</li>
+          <li>Membangun kolaborasi</li>
+          <li>Bertumbuh bersama sesama penari</li>
+        </ul>
+      </div>
+
+      <p class="eksplorasi-note reveal">Beberapa tahun dari sekarang, banyak orang mungkin hanya melihat koleksi yang telah selesai. Eksplorasi memberi kesempatan untuk melihat bagaimana semuanya dimulai.</p>
+
+      <div class="eksplorasi-cta reveal">
+        <a class="btn btn-red" id="join-eksplorasi-btn" target="_blank" rel="noopener">JOIN EKSPLORASI</a>
+        <a class="btn btn-ink" id="wa-eksplorasi-btn" target="_blank" rel="noopener">CHAT WHATSAPP</a>
+      </div>
     </div>
   </section>
 
-  <!-- VALUES -->
+  <!-- FEATURED PRODUCTS -->
+  <section class="sec-pad divider" id="products">
+    <div class="wrap">
+      <span class="label sec-label reveal">PRODUCTS FOR DANCERS</span>
+      <div class="products-intro reveal">
+        <p>Sambil mengembangkan koleksi berikutnya, beberapa produk MORFODANS yang telah digunakan dan teruji dalam praktik tetap tersedia.</p>
+        <p>Kedua produk berikut menjadi bagian dari perjalanan awal MORFODANS.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card reveal">
+          <h3>Dance T-Shirt</h3>
+          <p>Berangkat dari kebutuhan latihan dan aktivitas sehari-hari.</p>
+          <a class="btn btn-ghost" id="product-1-btn" target="_blank" rel="noopener">VIEW PRODUCT</a>
+        </div>
+        <div class="product-card reveal">
+          <h3>Jorkuk Drill T-Shirt</h3>
+          <p>Dikembangkan untuk mendukung pengalaman bergerak yang aktif.</p>
+          <a class="btn btn-ghost" id="product-2-btn" target="_blank" rel="noopener">VIEW PRODUCT</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DANS VALUES -->
   <section class="sec-pad values" id="values">
     <div class="wrap">
-      <span class="label sec-label reveal" id="values-label"></span>
-      <p class="values-intro reveal" id="values-intro"></p>
+      <span class="label sec-label reveal">DANS VALUES</span>
+      <p class="values-intro reveal">Kami percaya pakaian yang baik berangkat dari pemahaman yang baik terhadap tubuh.</p>
       <div class="values-grid" id="values-grid"></div>
     </div>
   </section>
@@ -270,30 +360,28 @@
         <div class="foot-brand">
           <img src="logo.png" alt="MORFODANS" />
           <div class="wm">MORFODANS™</div>
-          <div class="tag" id="foot-tag"></div>
-          <div class="claim" id="foot-claim"></div>
+          <div class="tag">by dancers · for dancers</div>
+          <div class="claim">Indonesia's Pioneer Clothing Brand for Dancers.</div>
         </div>
         <div class="foot-col">
-          <h4>Hubungi</h4>
-          <a id="foot-wa" target="_blank" rel="noopener"></a>
-          <a id="foot-ig" target="_blank" rel="noopener"></a>
-          <a id="foot-tiktok" target="_blank" rel="noopener"></a>
+          <h4>HUBUNGI</h4>
+          <a id="foot-wa" target="_blank" rel="noopener">WhatsApp</a>
+          <a id="foot-ig" target="_blank" rel="noopener">Instagram</a>
+          <a id="foot-tiktok" target="_blank" rel="noopener">TikTok</a>
         </div>
         <div class="foot-col">
-          <h4>Lainnya</h4>
-          <a href="toko.html">Lihat Toko →</a>
+          <h4>LAINNYA</h4>
+          <a class="cross-link" href="toko.html">LIHAT TOKO →</a>
         </div>
       </div>
     </div>
     <div class="foot-bottom" id="foot-copy"></div>
   </footer>
 
-  <!-- FLOATING WA -->
   <a class="wa-float" id="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.578-1.255zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
   </a>
 
-  <!-- MENU DRAWER -->
   <aside class="drawer" id="menu" aria-label="Menu">
     <div class="drawer-head">
       <span class="dt">Menu</span>
@@ -306,144 +394,71 @@
 
 <script>
 /* =================================================================
-   ╔════════════════════════════════════════════════════════════╗
-   ║   BAGIAN YANG BOLEH KAMU EDIT — TIDAK PERLU BISA CODING      ║
-   ║   Ubah teks di dalam tanda kutip " " saja.                  ║
-   ║   Jangan hapus koma, kurung, atau kurung kurawal.           ║
-   ╚════════════════════════════════════════════════════════════╝
+   BAGIAN YANG BOLEH KAMU EDIT — tidak perlu bisa coding.
+   Ubah teks di dalam tanda kutip " " saja.
    ================================================================= */
-
 const CONFIG = {
   waNumber: "6282141740234",
   ticker: "BY DANCERS · FOR DANCERS · INDONESIA'S PIONEER CLOTHING BRAND FOR DANCERS · MORFODANS™",
 
-  heroEyebrow: "BY DANCERS · FOR DANCERS",
-  heroHeadline: "MOVE DIFFERENT",
-  heroClaim: "Indonesia's Pioneer Clothing Brand for Dancers.",
-  heroSub: "MORFODANS mengembangkan pakaian yang berangkat dari tubuh. Prosesnya dibangun melalui pengalaman bergerak, pengamatan terhadap praktik latihan, dan riset yang terus berlangsung di ruang tari.",
-
-  builtLabel: "BUILT FOR DANCERS",
-  builtParagraphs: [
-    "MORFODANS lahir dari pengalaman langsung seorang penari.",
-    "Bertahun-tahun berlatih, menjalani proses kreatif, dan tampil di atas panggung memperlihatkan bahwa tubuh memiliki kebutuhan yang tidak selalu terjawab oleh pakaian yang tersedia saat ini.",
-    "Sebagian besar pakaian dirancang untuk aktivitas umum atau olahraga lain. Sementara itu, latihan, eksplorasi, dan pengalaman panggung menghadirkan kondisi yang berbeda.",
-    "Pengalaman tersebut menjadi titik awal MORFODANS. Setiap koleksi dikembangkan melalui pengamatan, eksplorasi, dan riset yang berangkat dari praktik yang dijalani setiap hari."
-  ],
-
-  whyLabel: "WHY DANCERS?",
-  whyParagraphs: [
-    "Menjadi penari lebih dari sekadar pekerjaan atau aktivitas.",
-    "Tubuh terus belajar melalui latihan, proses kreatif, dan pengalaman panggung. Banyak hal dipahami melalui gerak. Banyak hal ditemukan melalui praktik yang berlangsung berulang kali.",
-    "Namun hingga hari ini, sebagian besar pakaian yang digunakan masih berangkat dari kebutuhan aktivitas lain.",
-    "MORFODANS hadir untuk mempelajari tubuh tersebut lebih dekat dan mengembangkan pakaian yang tumbuh dari pengalaman bergerak."
-  ],
-
-  processCount: ["MA", "NEM", "TU", "WOLU."],
-  processTitle: "MA, NEM, TU, WOLU.",
-  processParagraphs: [
-    "MORFODANS baru memulai prosesnya.",
-    "Observasi, eksplorasi, dan riset sedang berlangsung untuk mengembangkan koleksi pertama yang berangkat dari tubuh dan pengalaman bergerak.",
-    "Banyak hal masih dipelajari. Banyak hal masih dicoba. Banyak hal masih mencari bentuknya.",
-    "Tidak banyak orang memiliki kesempatan untuk mengikuti sebuah brand sejak langkah pertamanya. Terlebih ketika proses tersebut berangkat langsung dari ruang latihan, pengalaman tubuh, dan praktik yang berlangsung setiap hari.",
-    "Proses itu sedang berlangsung sekarang."
-  ],
-
-  earlyTitle: "EARLY ACCESS",
-  earlyTag: "Ikuti prosesnya sejak awal.",
-  earlyParagraphs: [
-    "Early Access memberikan akses untuk mengikuti perkembangan MORFODANS mulai dari observasi, eksplorasi, riset, hingga lahirnya koleksi pertama.",
-    "Setiap pembaruan akan membawa Anda lebih dekat pada proses yang membentuk MORFODANS, bukan hanya pada produk yang akan hadir di kemudian hari.",
-    "Beberapa tahun dari sekarang, banyak orang mungkin hanya melihat produk yang telah selesai. Early Access memberi kesempatan untuk mengikuti bagaimana semuanya dimulai."
-  ],
-  // GANTI INI dengan link Google Form aslimu setelah dibuat.
-  // Saran 4 isian form: Nama, Instagram/TikTok handle, Email, Kota/Domisili.
-  earlyFormUrl: "https://forms.gle/GANTI-DENGAN-LINK-FORM-ASLIMU",
-  earlyNote: "Form belum aktif — kontak WhatsApp dulu jika ingin bergabung sekarang.",
-
-  valuesLabel: "MORFODANS VALUES",
-  valuesIntro: "Kami percaya pakaian yang baik berangkat dari pemahaman yang baik terhadap tubuh.",
-  values: [
-    { t: "Experience Before Assumption", d: "Setiap keputusan dimulai dari pengalaman langsung. Proses pengembangan berangkat dari latihan, praktik, dan pengalaman yang nyata." },
-    { t: "Observe Before Create", d: "Pengamatan menjadi bagian penting dari cara kami bekerja. Tubuh, gerak, dan pengalaman terus dipelajari sebelum diterjemahkan menjadi sebuah produk." },
-    { t: "Move With Purpose", d: "Setiap koleksi dikembangkan untuk mendukung tubuh saat bergerak, berlatih, dan berkarya." },
-    { t: "Stay In Process", d: "Pemahaman terhadap tubuh tidak pernah selesai. Karena itu observasi, eksplorasi, dan pembelajaran akan selalu menjadi bagian dari perjalanan MORFODANS." },
-    { t: "Respect The Practice", d: "Setiap koleksi dikembangkan sebagai bentuk penghormatan terhadap latihan, proses kreatif, dan pengalaman yang membentuk seorang penari." }
-  ],
-
   navLinks: [
     { label: "Built For Dancers", href: "#built" },
     { label: "Why Dancers", href: "#why" },
+    { label: "The Body Behind", href: "#body-behind" },
     { label: "Proses", href: "#process" },
-    { label: "Early Access", href: "#early-access" },
+    { label: "Eksplorasi", href: "#eksplorasi" },
+    { label: "Products", href: "#products" },
     { label: "Values", href: "#values" },
     { label: "Kontak", href: "#footer" }
   ],
 
-  footerTagline: "by dancers · for dancers",
-  footerClaim: "Indonesia's Pioneer Clothing Brand for Dancers.",
+  values: [
+    { t: "Khusus untuk Penari", d: "Tubuh penari memiliki kebutuhan yang unik dan berbeda. Setiap produk dikembangkan dengan kebutuhan tersebut sebagai titik awal." },
+    { t: "Kualitas", d: "Kami membuat produk sebaik yang kami bisa dan tidak menurunkan mutunya hanya agar terlihat lebih murah. Kualitas yang baik seharusnya dapat dijangkau oleh setiap penari." },
+    { t: "Jujur", d: "Kami hanya menyampaikan hal yang dapat kami buktikan. Bahan, jahitan, dan daya tahan produk kami uji terlebih dahulu sebelum kami ceritakan." },
+    { t: "Tumbuh Bersama Komunitas", d: "MORFODANS tumbuh dari komunitas tari dan ingin ikut menjaganya. Sebagian hasil penjualan akan dikembalikan untuk mendukung kegiatan dan ruang berkarya bagi penari." },
+    { t: "Fokus", d: "Kami memilih melayani penari dengan baik daripada melebar ke mana-mana. Menjaga fokus adalah cara kami menjaga alasan MORFODANS ada." },
+    { t: "Riset Langsung", d: "Produk kami tumbuh dari pengamatan dan keterlibatan langsung di komunitas tari, bukan dari tren industri atau meniru merek lain." }
+  ],
+
   igHandle: "@morfodans_fit",
   igUrl: "https://instagram.com/morfodans_fit",
   tiktokHandle: "@morfodans.fitfordancer",
   tiktokUrl: "https://tiktok.com/@morfodans.fitfordancer",
-  email: "morfo.dans@gmail.com",
-  copyright: "2026 © MORFODANS"
+  copyright: "2026 © MORFODANS",
+
+  // GANTI INI dengan link Google Form Eksplorasi aslimu setelah dibuat.
+  formUrl: "https://forms.gle/GANTI-DENGAN-LINK-FORM-ASLIMU"
 };
 
 /* =================================================================
-   ╔════════════════════════════════════════════════════════════╗
-   ║   DI BAWAH INI MESIN WEBSITE — SEBAIKNYA JANGAN DIUBAH       ║
-   ╚════════════════════════════════════════════════════════════╝
+   DI BAWAH INI MESIN WEBSITE — sebaiknya jangan diubah.
    ================================================================= */
-
 function waLink(text){ return "https://wa.me/" + CONFIG.waNumber + "?text=" + encodeURIComponent(text); }
-function paras(arr){ return arr.map(p => `<p>${p}</p>`).join(""); }
 
 function applyConfig(){
   document.getElementById("ticker").innerHTML =
     ("<span>" + CONFIG.ticker.replaceAll("·","<b>·</b>") + " &nbsp;&nbsp;</span>").repeat(2);
 
-  document.getElementById("hero-eyebrow").textContent = CONFIG.heroEyebrow;
-  document.getElementById("hero-headline").textContent = CONFIG.heroHeadline;
-  document.getElementById("hero-claim").textContent = CONFIG.heroClaim;
-  document.getElementById("hero-sub").textContent = CONFIG.heroSub;
+  document.getElementById("menu-nav").innerHTML =
+    CONFIG.navLinks.map(l => `<a href="${l.href}" onclick="closeMenu()">${l.label}</a>`).join("") +
+    `<a class="cross-link" href="toko.html">LIHAT TOKO →</a>`;
 
-  document.getElementById("built-label").textContent = CONFIG.builtLabel;
-  document.getElementById("built-content").innerHTML = paras(CONFIG.builtParagraphs);
-
-  document.getElementById("why-label").textContent = CONFIG.whyLabel;
-  document.getElementById("why-content").innerHTML = paras(CONFIG.whyParagraphs);
-
-  document.getElementById("process-count").innerHTML = CONFIG.processCount.map(c=>`<span>${c}</span>`).join("");
-  document.getElementById("process-title").textContent = CONFIG.processTitle;
-  document.getElementById("process-content").innerHTML =
-    CONFIG.processParagraphs.map(p => `<p class="reveal">${p}</p>`).join("");
-
-  document.getElementById("early-title").textContent = CONFIG.earlyTitle;
-  document.getElementById("early-tag").textContent = CONFIG.earlyTag;
-  document.getElementById("early-content").innerHTML = paras(CONFIG.earlyParagraphs);
-  const efb = document.getElementById("early-form-btn"); efb.href = CONFIG.earlyFormUrl;
-  const ewb = document.getElementById("early-wa-btn"); ewb.href = waLink("Halo MORFODANS! Saya mau ikut Early Access.");
-  document.getElementById("early-note").textContent = CONFIG.earlyNote;
-
-  document.getElementById("values-label").textContent = CONFIG.valuesLabel;
-  document.getElementById("values-intro").textContent = CONFIG.valuesIntro;
   document.getElementById("values-grid").innerHTML = CONFIG.values.map((v,i) => `
     <div class="value reveal">
       <div class="num">${String(i+1).padStart(2,"0")}</div>
       <div><h3>${v.t}</h3><p>${v.d}</p></div>
     </div>`).join("");
 
-  document.getElementById("menu-nav").innerHTML =
-    CONFIG.navLinks.map(l => `<a href="${l.href}" onclick="closeMenu()">${l.label}</a>`).join("") +
-    `<a class="toko-link" href="toko.html">Lihat Toko →</a>`;
+  document.getElementById("join-eksplorasi-btn").href = CONFIG.formUrl;
+  document.getElementById("wa-eksplorasi-btn").href = waLink("Halo MORFODANS! Saya tertarik bergabung Eksplorasi.");
+  document.getElementById("product-1-btn").href = waLink("Halo MORFODANS! Saya mau tanya soal Dance T-Shirt.");
+  document.getElementById("product-2-btn").href = waLink("Halo MORFODANS! Saya mau tanya soal Jorkuk Drill T-Shirt.");
 
-  document.getElementById("foot-tag").textContent = CONFIG.footerTagline;
-  document.getElementById("foot-claim").textContent = CONFIG.footerClaim;
-  const fw = document.getElementById("foot-wa"); fw.textContent = "WhatsApp"; fw.href = waLink("Halo MORFODANS!");
-  const fi = document.getElementById("foot-ig"); fi.textContent = "Instagram " + CONFIG.igHandle; fi.href = CONFIG.igUrl;
-  const ft = document.getElementById("foot-tiktok"); ft.textContent = "TikTok " + CONFIG.tiktokHandle; ft.href = CONFIG.tiktokUrl;
+  const fw = document.getElementById("foot-wa"); fw.href = waLink("Halo MORFODANS!");
+  document.getElementById("foot-ig").href = CONFIG.igUrl;
+  document.getElementById("foot-tiktok").href = CONFIG.tiktokUrl;
   document.getElementById("foot-copy").textContent = CONFIG.copyright;
-
   document.getElementById("wa-float").href = waLink("Halo MORFODANS! Saya mau tanya.");
 }
 
