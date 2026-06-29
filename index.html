@@ -104,8 +104,11 @@
   .gallery-intro p:last-child{ margin-bottom:0; }
   .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:clamp(16px,2.5vw,28px); }
   .gallery-item{ position:relative; aspect-ratio:1; background:#D9D4C8; border-radius:3px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-  .gallery-item img{ width:100%; height:100%; object-fit:cover; }
+  .gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; }
   .gallery-item span{ font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--mut); text-align:center; padding:0 12px; }
+  .gallery-caption{ position:absolute; left:0; right:0; bottom:0; padding:22px 14px 12px; background:linear-gradient(to top, rgba(15,13,11,.82), transparent); }
+  .gallery-caption span{ display:block; font-family:var(--serif); font-weight:600; font-size:12.5px; letter-spacing:.02em; color:#fff; text-transform:none; padding:0; }
+  .gallery-caption .credit{ font-size:10.5px; color:#C9C4B8; font-style:italic; margin-top:2px; }
 
   /* PROCESS — MA NEM TU WOLU */
   .process{ background:var(--ink); color:var(--paper); }
@@ -263,12 +266,30 @@
         <p>Foto dan dokumentasi berikut merupakan sebagian kecil dari proses yang membentuk perjalanan MORFODANS.</p>
       </div>
       <div class="gallery-grid reveal">
-        <div class="gallery-item"><span>FOTO LATIHAN</span></div>
-        <div class="gallery-item"><span>FOTO STUDIO</span></div>
-        <div class="gallery-item"><span>FOTO PANGGUNG</span></div>
-        <div class="gallery-item"><span>FOTO EKSPLORASI</span></div>
-        <div class="gallery-item"><span>FOTO OBSERVASI</span></div>
-        <div class="gallery-item"><span>VIDEO PROSES</span></div>
+        <div class="gallery-item">
+          <img src="body-shoulder-1.jpg" alt="Detail tubuh penari saat bergerak di atas pentas" loading="lazy" />
+          <div class="gallery-caption"><span>Detail tubuh, di atas pentas</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="artjog-performance.jpg" alt="Pertunjukan Samohung di ARTJOG, penari dalam formasi kelompok" loading="lazy" />
+          <div class="gallery-caption"><span>Pentas, ARTJOG</span><span class="credit">Foto: Ariyanto Nugroho</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="stage-silhouette.jpg" alt="Siluet penari di atas panggung dengan tata cahaya dramatis" loading="lazy" />
+          <div class="gallery-caption"><span>Siluet, atas pentas</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="stage-motion.webp" alt="Penari dalam gerak eksploratif di atas panggung dengan tata cahaya warna" loading="lazy" />
+          <div class="gallery-caption"><span>Eksplorasi gerak</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="body-shoulder-2.jpg" alt="Detail punggung dan bahu penari saat proses bergerak" loading="lazy" />
+          <div class="gallery-caption"><span>Detail tubuh, proses bergerak</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="rehearsal-floor.jpg" alt="Kaki sekelompok penari saat latihan bersama di ruang studio" loading="lazy" />
+          <div class="gallery-caption"><span>Latihan bersama</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -427,7 +448,7 @@ const CONFIG = {
   tiktokUrl: "https://tiktok.com/@morfodans.fitfordancer",
   copyright: "2026 © MORFODANS",
 
-  // GANTI INI dengan link Google Form Eksplorasi aslimu setelah dibuat.
+  // Link Google Form Eksplorasi (aktif)
   formUrl: "https://forms.gle/6VELm6gV7m6AfuWA9"
 };
 
