@@ -93,13 +93,41 @@
   .intro-block p{ font-size:clamp(17px,2vw,19px); line-height:1.65; color:var(--ink); margin-bottom:16px; }
   .intro-block p:last-child{ margin-bottom:0; }
 
-  /* PRODUCTS */
-  .products-grid{ display:grid; grid-template-columns:1fr; gap:clamp(28px,4.5vw,44px); margin-top:clamp(32px,5vw,48px); }
-  @media (min-width:720px){ .products-grid{ grid-template-columns:1fr 1fr; } }
-  .product-card{ border:1px solid var(--line); padding:clamp(24px,3.5vw,32px); }
-  .product-card h3{ font-family:var(--display); font-size:clamp(22px,3.2vw,28px); letter-spacing:.01em; text-transform:uppercase; margin-bottom:14px; color:var(--ink); }
-  .product-context{ font-family:var(--serif); font-weight:600; font-style:italic; font-size:13.5px; letter-spacing:.01em; color:var(--mut); text-transform:none; margin-bottom:14px; line-height:1.5; }
-  .product-card p.desc{ font-size:clamp(15px,1.9vw,17px); line-height:1.6; color:var(--ink); margin-bottom:20px; }
+  /* PRODUCTS — PREMIUM CARD WITH CAROUSEL */
+  .products-grid{ display:grid; grid-template-columns:1fr; gap:clamp(32px,5vw,56px); margin-top:clamp(36px,5vw,52px); }
+  @media (min-width:720px){ .products-grid{ grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,44px); } }
+
+  .product-card{ background:var(--paper); border:1px solid var(--line); }
+  .product-card:hover{ border-color:#C8C2B6; }
+
+  /* CAROUSEL */
+  .carousel{ position:relative; overflow:hidden; background:var(--paper2); aspect-ratio:4/3; }
+  .carousel-track{ display:flex; transition:transform .38s cubic-bezier(.4,0,.2,1); height:100%; }
+  .carousel-slide{ flex:0 0 100%; height:100%; display:flex; align-items:center; justify-content:center; padding:24px; }
+  .carousel-slide img{ max-width:100%; max-height:100%; object-fit:contain; display:block; }
+  .carousel-slide.poster-slide{ padding:0; }
+  .carousel-slide.poster-slide img{ object-fit:cover; width:100%; height:100%; }
+  .carousel-btn{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(246,243,236,.92); border:1px solid var(--line); width:36px; height:36px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:3; transition:background .15s; }
+  .carousel-btn:hover{ background:#fff; }
+  .carousel-btn svg{ width:14px; height:14px; }
+  .carousel-prev{ left:10px; }
+  .carousel-next{ right:10px; }
+  .carousel-dots{ position:absolute; bottom:10px; left:50%; transform:translateX(-50%); display:flex; gap:6px; }
+  .carousel-dot{ width:6px; height:6px; border-radius:50%; background:rgba(19,17,15,.22); transition:background .2s; cursor:pointer; }
+  .carousel-dot.active{ background:var(--red); }
+
+  /* CARD INFO */
+  .product-info{ padding:clamp(18px,3vw,26px); }
+  .product-badge{ display:inline-block; background:var(--red); color:#fff; font-family:var(--serif); font-weight:800; font-size:11px; letter-spacing:.08em; text-transform:uppercase; padding:4px 9px; border-radius:50px; margin-bottom:13px; }
+  .product-name{ font-family:var(--display); font-size:clamp(20px,3vw,26px); letter-spacing:.01em; text-transform:uppercase; color:var(--ink); margin-bottom:5px; line-height:1.1; }
+  .product-tagline{ font-family:var(--serif); font-weight:700; font-size:12px; letter-spacing:.07em; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+  .product-desc{ font-size:clamp(14px,1.7vw,15px); line-height:1.6; color:var(--mut); margin-bottom:18px; }
+  .product-price-block{ display:flex; align-items:baseline; gap:12px; margin-bottom:20px; }
+  .price-old{ font-family:var(--serif); font-size:14px; color:var(--mut); text-decoration:line-through; }
+  .price-new{ font-family:var(--display); font-size:clamp(22px,3.5vw,28px); letter-spacing:.02em; color:var(--ink); }
+  .btn-buy{ width:100%; text-align:center; justify-content:center; background:var(--red); color:#fff; font-family:var(--serif); font-weight:700; font-size:12.5px; letter-spacing:.07em; text-transform:uppercase; padding:14px 20px; border:none; cursor:pointer; display:flex; align-items:center; gap:8px; transition:background .15s; }
+  .btn-buy:hover{ background:var(--red-deep); }
+  .btn-buy svg{ width:16px; height:16px; fill:currentColor; }
 
   /* VALUES */
   .values{ background:var(--ink); color:var(--paper); }
@@ -196,7 +224,7 @@
     </div>
   </section>
 
-  <!-- MOVE WITH DANCERS -->
+  <!-- MOVE WITH DANCERS / FEATURED PRODUCTS -->
   <section class="sec-pad divider" id="products">
     <div class="wrap">
       <span class="label sec-label reveal">MOVE WITH DANCERS</span>
@@ -207,18 +235,99 @@
       </div>
 
       <div class="products-grid">
+
+        <!-- PRODUCT 1: DANCE T-SHIRT -->
         <div class="product-card reveal">
-          <h3>Dance T-Shirt</h3>
-          <p class="product-context">Digunakan oleh Dani S. Budiman dalam campaign Move With Dancers pada rangkaian 24 Jam Menari ISI Surakarta 2026.</p>
-          <p class="desc">Berangkat dari kebutuhan latihan dan aktivitas sehari-hari.</p>
-          <a class="btn btn-ghost" id="product-1-btn" target="_blank" rel="noopener">VIEW PRODUCT</a>
+          <div class="carousel" id="carousel-1">
+            <div class="carousel-track" id="track-1">
+              <div class="carousel-slide">
+                <img src="dance-tshirt-front.webp" alt="Dance T-Shirt depan" loading="lazy" />
+              </div>
+              <div class="carousel-slide">
+                <img src="dance-tshirt-back.webp" alt="Dance T-Shirt belakang" loading="lazy" />
+              </div>
+              <div class="carousel-slide poster-slide">
+                <img src="dance-tshirt-detail.jpg" alt="Dance T-Shirt detail desain" loading="lazy" />
+              </div>
+              <div class="carousel-slide poster-slide">
+                <img src="dance-tshirt-sizechart.jpg" alt="Dance T-Shirt size chart" loading="lazy" />
+              </div>
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="slide(1,-1)" aria-label="Sebelumnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="carousel-btn carousel-next" onclick="slide(1,1)" aria-label="Berikutnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <div class="carousel-dots" id="dots-1">
+              <span class="carousel-dot active" onclick="goTo(1,0)"></span>
+              <span class="carousel-dot" onclick="goTo(1,1)"></span>
+              <span class="carousel-dot" onclick="goTo(1,2)"></span>
+              <span class="carousel-dot" onclick="goTo(1,3)"></span>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-badge">25% OFF</span>
+            <h3 class="product-name">Dance T-Shirt</h3>
+            <p class="product-tagline">World Dance Day Limited Edition</p>
+            <p class="product-desc">Berangkat dari kebutuhan latihan dan aktivitas sehari-hari. Cotton Combed premium dengan fitted cut yang nyaman untuk bergerak.</p>
+            <div class="product-price-block">
+              <span class="price-old">Rp279.000</span>
+              <span class="price-new">Rp209.250</span>
+            </div>
+            <a class="btn-buy" href="https://wa.me/6282141740234?text=Halo%20MORFODANS%2C%20saya%20ingin%20membeli%20Dance%20T-Shirt" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.578-1.255zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              BUY VIA WHATSAPP
+            </a>
+          </div>
         </div>
+
+        <!-- PRODUCT 2: JORKUK DRILL T-SHIRT -->
         <div class="product-card reveal">
-          <h3>Jorkuk Drill T-Shirt</h3>
-          <p class="product-context">Digunakan oleh Dr. Ari Darminalan Rudenko dalam campaign Move With Dancers pada rangkaian 24 Jam Menari ISI Surakarta 2026.</p>
-          <p class="desc">Dikembangkan untuk mendukung pengalaman bergerak yang aktif.</p>
-          <a class="btn btn-ghost" id="product-2-btn" target="_blank" rel="noopener">VIEW PRODUCT</a>
+          <div class="carousel" id="carousel-2">
+            <div class="carousel-track" id="track-2">
+              <div class="carousel-slide">
+                <img src="jorkuk-drill-front.webp" alt="Jorkuk Drill T-Shirt depan" loading="lazy" />
+              </div>
+              <div class="carousel-slide">
+                <img src="jorkuk-drill-back.webp" alt="Jorkuk Drill T-Shirt belakang" loading="lazy" />
+              </div>
+              <div class="carousel-slide poster-slide">
+                <img src="jorkuk-drill-detail.jpg" alt="Jorkuk Drill T-Shirt detail desain" loading="lazy" />
+              </div>
+              <div class="carousel-slide poster-slide">
+                <img src="jorkuk-drill-sizechart.jpg" alt="Jorkuk Drill T-Shirt size chart" loading="lazy" />
+              </div>
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="slide(2,-1)" aria-label="Sebelumnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="carousel-btn carousel-next" onclick="slide(2,1)" aria-label="Berikutnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <div class="carousel-dots" id="dots-2">
+              <span class="carousel-dot active" onclick="goTo(2,0)"></span>
+              <span class="carousel-dot" onclick="goTo(2,1)"></span>
+              <span class="carousel-dot" onclick="goTo(2,2)"></span>
+              <span class="carousel-dot" onclick="goTo(2,3)"></span>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-badge">25% OFF</span>
+            <h3 class="product-name">Jorkuk Drill T-Shirt</h3>
+            <p class="product-tagline">World Dance Day Limited Edition</p>
+            <p class="product-desc">Cotton Combed 200+ GSM dengan boxy cut untuk pengalaman bergerak yang aktif.</p>
+            <div class="product-price-block">
+              <span class="price-old">Rp282.000</span>
+              <span class="price-new">Rp211.500</span>
+            </div>
+            <a class="btn-buy" href="https://wa.me/6282141740234?text=Halo%20MORFODANS%2C%20saya%20ingin%20membeli%20Jorkuk%20Drill%20T-Shirt" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.578-1.255zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              BUY VIA WHATSAPP
+            </a>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -356,8 +465,6 @@ function applyConfig(){
 
   document.getElementById("join-eksplorasi-btn").href = CONFIG.formUrl;
   document.getElementById("wa-eksplorasi-btn").href = waLink("Halo MORFODANS! Saya tertarik bergabung Eksplorasi.");
-  document.getElementById("product-1-btn").href = waLink("Halo MORFODANS! Saya mau tanya soal Dance T-Shirt.");
-  document.getElementById("product-2-btn").href = waLink("Halo MORFODANS! Saya mau tanya soal Jorkuk Drill T-Shirt.");
 
   document.getElementById("foot-wa").href = waLink("Halo MORFODANS!");
   document.getElementById("foot-ig").href = CONFIG.igUrl;
@@ -376,6 +483,50 @@ function observeReveals(){
   if(!_io){ _io=new IntersectionObserver((es)=>{ es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("in"); _io.unobserve(en.target);} }); }, {threshold:.12}); }
   document.querySelectorAll(".reveal:not(.in)").forEach(e=>_io.observe(e));
 }
+
+
+/* =============================================
+   CAROUSEL ENGINE
+   ============================================= */
+const carouselState = {};
+
+function initCarousel(id) {
+  carouselState[id] = { current: 0, total: 4 };
+  const track = document.getElementById("track-" + id);
+  if (!track) return;
+  const el = document.getElementById("carousel-" + id);
+  let startX = 0;
+  el.addEventListener("touchstart", e => { startX = e.touches[0].clientX; }, { passive: true });
+  el.addEventListener("touchend", e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) slide(id, dx < 0 ? 1 : -1);
+  });
+}
+
+function slide(id, dir) {
+  const s = carouselState[id];
+  if (!s) return;
+  s.current = (s.current + dir + s.total) % s.total;
+  _applyCarousel(id);
+}
+
+function goTo(id, idx) {
+  const s = carouselState[id];
+  if (!s) return;
+  s.current = idx;
+  _applyCarousel(id);
+}
+
+function _applyCarousel(id) {
+  const s = carouselState[id];
+  document.getElementById("track-" + id).style.transform = "translateX(-" + (s.current * 100) + "%)";
+  document.querySelectorAll("#dots-" + id + " .carousel-dot").forEach((d, i) => {
+    d.classList.toggle("active", i === s.current);
+  });
+}
+
+initCarousel(1);
+initCarousel(2);
 
 applyConfig();
 observeReveals();
